@@ -2,19 +2,22 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import { AiOutlineMenu } from "react-icons/ai";
+import Link from "next/link";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <div className={styles.navbarContainer}>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <Image
-          className={styles.navbarImage}
-          src="/img/deepControl.png"
-          alt="Logo"
-          width={370}
-          height={70}
-        />
+        <Link href="https://deepcontrol.net/">
+          <Image
+            className={styles.navbarImage}
+            src="/img/deepControl.png"
+            alt="Logo"
+            width={370}
+            height={70}
+          />
+        </Link>
       </div>
       <div className={styles.navbarRightSide}>
         <p>SignIn</p>
