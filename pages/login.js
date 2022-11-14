@@ -17,7 +17,6 @@ const Login = () => {
     let isNewCreateOnePager = localStorage.getItem("userInfo");
     setData(JSON.parse(isNewCreateOnePager));
   }, []);
-  console.log(userInfo);
   const handleLogin = () => {
     if (userInfo.email && userInfo.password) {
       if (data) {
