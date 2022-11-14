@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 
 const Footer = () => {
@@ -11,18 +10,18 @@ const Footer = () => {
         </span>
       </p>
       <div className={styles.footerLinkContainer}>
-        <Link
+        <a
           className={styles.footerLinkText}
           href="https://deepcontrol.net/policy"
         >
           Politikalarımız
-        </Link>
-        <Link
+        </a>
+        <a
           className={styles.footerLinkText}
           href="https://deepcontrol.net/contact"
         >
           İletişim
-        </Link>
+        </a>
       </div>
     </div>
   );

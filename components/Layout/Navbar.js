@@ -10,12 +10,10 @@ const Navbar = () => {
     <div className={styles.navbarContainer}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <Link href="https://deepcontrol.net/">
-          <Image
+          <img
             className={styles.navbarImage}
-            src="/img/deepControl.png"
+            src="./img/deepControl.png"
             alt="Logo"
-            width={370}
-            height={70}
           />
         </Link>
       </div>
