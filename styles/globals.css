@@ -5,7 +5,7 @@
   --secondry: #189AB4 ;
   --tertiary: #75E6DA ;
   --border : #D4F1F4 ;
-
+  --linkText : #6b6b84;
 }
 
 html,
@@ -19,3 +19,19 @@ body {
   box-sizing: border-box;
 }
 
+input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--border);
+  outline:none;
+  padding: 15px;
+  font-size: 16px;
+}
+input:focus {
+  border:2px solid var(--secondry)
+}
+
+label {
+  align-self: flex-start;
+}
