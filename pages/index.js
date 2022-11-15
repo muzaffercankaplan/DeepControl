@@ -1,23 +1,22 @@
-import styles from "../styles/Home.module.css";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const HomePage = () => {
-  // const [data, setData] = useState();
-  // const router = useRouter();
+  const [data, setData] = useState();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   let isNewCreateOnePager = localStorage.getItem("userInfo");
-  //   setData(JSON.parse(isNewCreateOnePager));
-  // }, []);
+  useEffect(() => {
+    let isNewCreateOnePager = localStorage.getItem("userInfo");
+    setData(JSON.parse(isNewCreateOnePager));
+  }, []);
 
-  // // if (typeof window !== "undefined") {
-  // //   if (data?.isLogIn) {
-  // //     router.push("/main");
-  // //   } else if (!data) {
-  // //     router.push("/login");
-  // //   }
-  // // }
+  if (typeof window !== "undefined") {
+    if (data?.isLogIn) {
+      router.push("/main");
+    } else if (!data) {
+      router.push("/login");
+    }
+  }
   return <div>HomePage</div>;
 };
 
