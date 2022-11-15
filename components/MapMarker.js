@@ -21,7 +21,7 @@ const MapMarker = ({ item, polyline, setPolyline }) => {
   const lastIndex = polyline[polyline.length - 1]?.[0];
 
   let lat = polyline.map((latlng) => latlng?.[0]);
-  console.log(polyline);
+
   return (
     <div>
       <Marker
@@ -41,7 +41,6 @@ const MapMarker = ({ item, polyline, setPolyline }) => {
               setPolyline([...polyline, [e.latlng.lat, e.latlng.lng]]);
             } else {
               setLocationImage("");
-              console.log(locationImage);
               const index = lat.indexOf(e.latlng.lat);
               const newPolyline = [...polyline];
               const slicePolyLine = newPolyline.splice(index, 1);
