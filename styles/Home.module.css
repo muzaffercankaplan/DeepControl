@@ -29,21 +29,27 @@
 }
 .navbarMenu {
   position: absolute;
-  z-index: 2;
+  z-index: 401;
   background: white;
   box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.75);
   border-radius: 5px;
   right: 10px;
   padding: 10px 40px;
-  color: black;
-  transition: all .10s;
+}
+.navbarLinkText {
+  color: var(--linkText);
+  transition-duration: .5s;
+  text-decoration: none;
+}
+.navbarLinkText:hover {
+  color:#2067d3
 }
 /* Navbar */
 
 /* Footer */
 .footerContainer{
   border-top: 1px solid #f3f2ee;
-  margin: 70px 0;
+  margin: 10px 0 0 0;
   font-size: 18px;
   color: var(--linkText);
   display: flex;
@@ -138,6 +144,20 @@
 
 /* login */
 
+/* map */
+.mapButton {
+  padding: 12px;
+  border-radius: 5px;
+  border:none;
+  background-color: var(--tertiary);
+  font-size: 18px;
+  color: var(--primary);
+  transition-duration: 1000ms;
+  cursor: pointer;
+  margin: 5px 5px 0 0;
+}
+/* map */
+
 @media only screen and (max-width: 1024px) {
   /* Layout */
 .childrenContainer {
@@ -162,7 +182,6 @@
 
   /* Footer */
 .footerContainer{
-  margin: 50px 0;
   font-size: 18px;
   color: var(--linkText);
   display: block;
