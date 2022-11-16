@@ -28,6 +28,9 @@
   width: 300px;
 }
 .navbarMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   position: absolute;
   z-index: 401;
   background: white;
@@ -36,6 +39,7 @@
   right: 10px;
   padding: 10px 40px;
 }
+
 .navbarLinkText {
   color: var(--linkText);
   transition-duration: .5s;

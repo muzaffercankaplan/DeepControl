@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [data, setData] = useState();
-  const router = useRouter();
-
   useEffect(() => {
-    let isNewCreateOnePager = localStorage.getItem("userInfo");
-    setData(JSON.parse(isNewCreateOnePager));
+    const isNewCreateOnePager = localStorage.getItem("userInfo");
+    if (isNewCreateOnePager) setData(JSON.parse(isNewCreateOnePager));
   }, []);
 
   return (
@@ -28,7 +25,7 @@ const Navbar = () => {
       </div>
       <div className={styles.navbarRightSide}>
         {!data?.isLogIn && (
-          <Link className={styles.navbarLinkText} href="/">
+          <Link className={styles.navbarLinkText} href="login">
             SignIn
           </Link>
         )}
@@ -54,7 +51,7 @@ const Navbar = () => {
         {showMenu && (
           <div className={styles.navbarMenu}>
             {!data?.isLogIn && (
-              <Link className={styles.navbarLinkText} href="/">
+              <Link className={styles.navbarLinkText} href="login">
                 SignIn
               </Link>
             )}
@@ -66,7 +63,7 @@ const Navbar = () => {
                 );
               }}
               className={styles.navbarLinkText}
-              href="login"
+              href={data?.isLogIn ? "login" : "register"}
             >
               {data?.isLogIn ? "SignOut" : "SignUp"}
             </Link>

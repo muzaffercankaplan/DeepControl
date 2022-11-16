@@ -59,6 +59,7 @@ const Register = () => {
         <input
           type={showPassword ? "text" : "password"}
           id="password"
+          placeholder="********"
           minLength="8"
           value={userInfo.password}
           onChange={(e) =>
