@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
@@ -13,10 +13,12 @@ const Login = () => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const router = useRouter();
+
   useEffect(() => {
     let isNewCreateOnePager = localStorage.getItem("userInfo");
     setData(JSON.parse(isNewCreateOnePager));
   }, []);
+
   const handleLogin = () => {
     if (userInfo.email && userInfo.password) {
       if (data) {
@@ -28,7 +30,7 @@ const Login = () => {
             "userInfo",
             JSON.stringify({ ...data, isLogIn: true })
           );
-          router.push("/main");
+          router.push("main");
         } else {
           setError("Your creditentials are not correct!");
         }
@@ -62,6 +64,7 @@ const Login = () => {
           type={showPassword ? "text" : "password"}
           id="password"
           placeholder="********"
+          minLength="8"
           value={userInfo.password}
           onChange={(e) =>
             setUserInfo({ ...userInfo, password: e.target.value })
