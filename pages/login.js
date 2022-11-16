@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
@@ -57,7 +58,12 @@ const Login = () => {
           className={styles.loginShowPassword}
           onClick={() => setShowPassword((prevValue) => !prevValue)}
         >
-          <img src={showPassword ? "/img/eye.png" : "/img/hide.png"} />
+          <Image
+            width={24}
+            height={24}
+            alt="show password"
+            src={showPassword ? "/img/eye.png" : "/img/hide.png"}
+          />
         </span>
         <label htmlFor="password">Password</label>
         <input
@@ -76,7 +82,7 @@ const Login = () => {
         Login
       </button>
       <p className={styles.loginFooterText}>
-        Don't have an account?{" "}
+        Don&apos;t have an account?
         <span
           onClick={() => router.push("/register")}
           className={styles.loginLink}

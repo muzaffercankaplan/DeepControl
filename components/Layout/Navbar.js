@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,9 +16,10 @@ const Navbar = () => {
     <div className={styles.navbarContainer}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <Link href="https://deepcontrol.net/">
-          <img
-            className={styles.navbarImage}
-            src="./img/deepControl.png"
+          <Image
+            width={300}
+            height={50}
+            src="/img/deepControl.png"
             alt="Logo"
             loading="lazy"
           />
