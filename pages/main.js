@@ -7,7 +7,7 @@ const MapWithNoSSR = dynamic(() => import("../components/Map.js"), {
   ssr: false,
 });
 
-const main = () => {
+const Main = () => {
   const [data, setData] = useState();
   const router = useRouter();
 
@@ -27,4 +27,4 @@ const main = () => {
   );
 };
 
-export default main;
+export default Main;
