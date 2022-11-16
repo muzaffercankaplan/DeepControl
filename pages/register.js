@@ -2,16 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import userInfoBoard from "../hook/userInfoBoard";
 import styles from "../styles/Home.module.css";
 
 const Register = () => {
-  const intialValidation = {
-    name: "",
-    email: "",
-    password: "",
-    isLogIn: false,
-  };
-  const [userInfo, setUserInfo] = useState(intialValidation);
+  const { userInfo, setUserInfo } = userInfoBoard();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
   const router = useRouter();

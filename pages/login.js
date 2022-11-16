@@ -2,8 +2,10 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
+import userInfoBoard from "../hook/userInfoBoard";
 
 const Login = () => {
+  const { setUserLogin } = userInfoBoard();
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
@@ -31,6 +33,7 @@ const Login = () => {
             "userInfo",
             JSON.stringify({ ...data, isLogIn: true })
           );
+          setUserLogin(true);
           router.push("main");
         } else {
           setError("Your creditentials are not correct!");

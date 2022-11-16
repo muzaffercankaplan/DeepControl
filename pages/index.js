@@ -6,10 +6,6 @@ const HomePage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    localStorage.setItem(
-      "userInfo",
-      JSON.stringify({ ...data, isLogIn: false })
-    );
     let isNewCreateOnePager = localStorage.getItem("userInfo");
     setData(JSON.parse(isNewCreateOnePager));
   }, []);
