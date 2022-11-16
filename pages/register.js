@@ -16,7 +16,8 @@ const Register = () => {
   const [error, setError] = useState(false);
   const router = useRouter();
 
-  const handleCreateAccount = () => {
+  const handleCreateAccount = (e) => {
+    e.preventDefault();
     if (userInfo.email && userInfo.password && userInfo.name) {
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
       router.push("/login");
@@ -28,7 +29,7 @@ const Register = () => {
     }, 5000);
   };
   return (
-    <div className={styles.loginContainer}>
+    <form className={styles.loginContainer} onSubmit={handleCreateAccount}>
       <div className={styles.loginInput}>
         <label htmlFor="name">Name</label>
         <input
@@ -78,16 +79,14 @@ const Register = () => {
           Please fill in all fields
         </p>
       )}
-      <button onClick={handleCreateAccount} className={styles.button}>
-        Create account
-      </button>
+      <button className={styles.button}>Create account</button>
       <p
         onClick={() => router.push("/login")}
         className={styles.registerFooterText}
       >
         Back
       </p>
-    </div>
+    </form>
   );
 };
 
