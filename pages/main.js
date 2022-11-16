@@ -18,7 +18,7 @@ const Main = () => {
     setData(JSON.parse(isNewCreateOnePager));
     setUserLogin(true);
   }, []);
-  console.log(data);
+
   if ((data && data?.isLogIn === false) || data === null) {
     router.push("login");
   }
