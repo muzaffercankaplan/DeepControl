@@ -20,6 +20,7 @@ const Login = () => {
   useEffect(() => {
     let isNewCreateOnePager = localStorage.getItem("userInfo");
     setData(JSON.parse(isNewCreateOnePager));
+    setUserLogin(false);
   }, []);
 
   const handleLogin = () => {
